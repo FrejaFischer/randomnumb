@@ -1,10 +1,16 @@
-let maxNumb = 10;
-let rndNum = generateRandomNumber(maxNumb);
+window.addEventListener("load", getRandom);
 
-console.log(rndNum);
+function getRandom() {
+  let maxNumb = 10;
+  let rndNum = generateRandomNumber(maxNumb);
 
-document.querySelector(".randomp").textContent = rndNum;
+  console.log(rndNum);
 
-function generateRandomNumber(max) {
-  return Math.floor(Math.random() * max) + 1;
+  document.querySelector(".randomp").textContent = rndNum;
+
+  function generateRandomNumber(max) {
+    return Math.floor(Math.random() * max) + 1;
+  }
+
+  document.querySelector("button").addEventListener("click", getRandom);
 }
